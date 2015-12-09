@@ -154,6 +154,7 @@ typedef int intptr_t;
 #include <ctype.h>
 #include <limits.h>
 
+
 #ifdef _MSC_VER
   #include <io.h>
 
@@ -177,7 +178,7 @@ typedef int intptr_t;
 
 #endif
 
-
+#include "../qcommon/altlog.h"
 #include "q_platform.h"
 
 //=============================================================

@@ -46,6 +46,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include "../qcommon/q_shared.h"
 #include "../qcommon/qcommon.h"
+#include "../qcommon/altlog.h"
 
 static char binaryPath[ MAX_OSPATH ] = { 0 };
 static char installPath[ MAX_OSPATH ] = { 0 };
@@ -669,8 +670,16 @@ int main( int argc, char **argv )
 		Q_strcat( commandLine, sizeof( commandLine ), " " );
 	}
 
+	fileOpen();
+	
 	Com_Init( commandLine );
+
+	Profiler();
+
 	NET_Init( );
+
+	altlog("boob");
+	altlog("other boob");
 
 	CON_Init( );
 
@@ -680,12 +689,12 @@ int main( int argc, char **argv )
 	signal( SIGTERM, Sys_SigHandler );
 	signal( SIGINT, Sys_SigHandler );
 
+//	FPS();
 	while( 1 )
 	{
 		IN_Frame( );
 		Com_Frame( );
 	}
-
+	fileClose();
 	return 0;
 }
-
