@@ -36,13 +36,19 @@ void altlog(const char *log, ...)
 
 		if (my_log = 1 || 3)
 		{
-			vfprintf(fp, log, logList);
-			fprintf(fp, "\n");
+			for (int i = 0; i < log; i++)
+			{
+				vfprintf(fp, log[i], logList);
+				fprintf(fp, "\n");
+			}
 		}
 		if (my_log = 2 || 3)
 		{
-			vprintf(log, logList);
-			printf("\n");
+			for (int j = 0; j < log[j]; j++)
+			{
+				vprintf(fp, log[j], logList);
+				printf(fp, "\n");
+			}
 		}
 		
 		va_end(log);
