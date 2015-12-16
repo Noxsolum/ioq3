@@ -678,8 +678,8 @@ int main( int argc, char **argv )
 
 	NET_Init( );
 
-	altlog("boob", "other boob");
-	//altlog("other boob");
+	altlog("boob");
+	altlog("other boob");
 
 	CON_Init( );
 
@@ -689,7 +689,6 @@ int main( int argc, char **argv )
 	signal( SIGTERM, Sys_SigHandler );
 	signal( SIGINT, Sys_SigHandler );
 
-//	FPS();
 	while( 1 )
 	{
 		IN_Frame( );

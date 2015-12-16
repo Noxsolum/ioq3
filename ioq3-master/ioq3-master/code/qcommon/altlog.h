@@ -17,7 +17,12 @@ void altlog(const char *log, ...);
 
 typedef enum
 {
-	altLogOff, altLogToFile, altLogToDebug, altLogToBoth
+	altLogOff, altLogToFile, altLogToConsole, altLogToBoth
 
 } logger;
+
+typedef enum
+{
+	PlayerPos, PlayerDeath, Other, Performance, Error, Debug
+} tagging;
 #endif
